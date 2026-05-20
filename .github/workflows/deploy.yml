@@ -36,6 +36,11 @@ jobs:
         run: cp dist/index.html dist/404.html
 
       - uses: actions/configure-pages@v5
+        with:
+          # Auto-enable GitHub Pages (with "GitHub Actions" as the source)
+          # the first time this workflow runs on a repo, so a fresh clone/fork
+          # doesn't have to manually flip the switch in Settings → Pages.
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
